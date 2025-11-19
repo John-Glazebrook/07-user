@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<br>
+<br>
+<br>
+<br>
+
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">{{ title }}</h5>
+    <h6 class="card-subtitle mb-2 text-body-secondary">Site: {{ domain }}</h6>
+    <p class="card-text" style="white-space: pre-line">{{ body | safe  }}</p>
+    <a href="{{ url }}" class="card-link">{{ domain }}</a>
+  </div>
+</div>
+
+<div class="buttons">
+	<a class="left-arrow" href="{{ url_for('news.article', id=prev_id) }}">➯</a>
+  <a class="right-arrow" href="{{ url_for('news.article', id=next_id) }}">➯</a>
+</div>
+
+{% endblock %}
